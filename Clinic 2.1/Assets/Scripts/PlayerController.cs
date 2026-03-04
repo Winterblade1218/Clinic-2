@@ -1,0 +1,64 @@
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+
+    public float speed = 10.0f;
+    public float moveSpeed = 10.0f;
+    public float horizontalInput; 
+    public float forwardInput;
+    public float laneDistance = 3f;
+    private int targetLane = 1;
+    private Rigidbody playerRb;
+    public float jumpForce = 10;
+    public float gravityModifier; 
+    public bool isOnGround = true;
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+       playerRb = GetComponent<Rigidbody>();
+       Physics.gravity *= gravityModifier; 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Moves Player Forward
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+        //Input for lane switching
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && targetLane > 0)
+        {
+            targetLane--;
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow) && targetLane < 2)
+        {
+            targetLane++;
+        }
+
+        //Calculate Position
+        Vector3 targetPosition = new Vector3((targetLane - 1) * laneDistance, transform.position.y, transform.position.z);
+
+        //Move to Lane
+        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * moveSpeed);
+
+        //Jump
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        {
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isOnGround = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Dectects if player is on ground
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isOnGround = true;
+        }
+    }
+}
