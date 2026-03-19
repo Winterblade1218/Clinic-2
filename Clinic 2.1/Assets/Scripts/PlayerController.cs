@@ -2,17 +2,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    // Speed of player
     public float speed = 10.0f;
+    // Speed of lane switching
     public float moveSpeed = 10.0f;
-    public float horizontalInput; 
-    public float forwardInput;
+    // Distance between lanes
     public float laneDistance = 3f;
+    // Current lane
     private int targetLane = 1;
+    // Brings in player rigidbody
     private Rigidbody playerRb;
+    // How far player jumps
     public float jumpForce = 10;
-    public float gravityModifier; 
+    // Allows Gravity to be modifyed?
+    public float gravityModifier;
+    // Variable for if player is on ground or not
     public bool isOnGround = true;
+    // Slide force? Hopefully.
+    public float downForce = 10;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -49,6 +57,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isOnGround = false;
+        }
+
+        //Slide
+        if (Input.GetKeyDown(KeyCode.DownArrow) && isOnGround)
+        {
+            playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
             isOnGround = false;
         }
     }
