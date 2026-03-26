@@ -22,6 +22,7 @@ public class WaterCode : MonoBehaviour
         {
             Destroy(gameObject);
             playerController.haveWater = true;
+            Debug.Log("water");
         }
     }
 }

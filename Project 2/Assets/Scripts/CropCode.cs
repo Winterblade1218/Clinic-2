@@ -17,8 +17,9 @@ public class CropCode : MonoBehaviour
     {
         Countdown+=1;
 
-        if (Countdown == 1000)
+        if (Countdown == 2000)
         {
+            playerController.isAlive+=1;
             Destroy(gameObject);
         }
     }
@@ -29,8 +30,9 @@ public class CropCode : MonoBehaviour
         {
             if (playerController.haveWater == true)
             {
-                Countdown-=100;
+                Countdown-=2000;
                 Debug.Log("plant has been watered");
+                playerController.haveWater = false;
             }
         }
     }
