@@ -25,6 +25,7 @@ public class KillPlayer : MonoBehaviour
         {
             //Destroys the Player
             Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

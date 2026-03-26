@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Moves Player Forward
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        //transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
         //Input for lane switching
         if (Input.GetKeyDown(KeyCode.LeftArrow) && targetLane > 0)
