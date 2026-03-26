@@ -4,20 +4,28 @@ public class PlayerController : MonoBehaviour
 {
     // Speed of player
     public float speed = 10.0f;
+
     // Speed of lane switching
     public float moveSpeed = 10.0f;
+
     // Distance between lanes
     public float laneDistance = 3f;
+
     // Current lane
     private int targetLane = 1;
+
     // Brings in player rigidbody
     private Rigidbody playerRb;
+
     // How far player jumps
     public float jumpForce = 10;
-    // Allows Gravity to be modifyed?
+
+    // The strength of gravity
     public float gravityModifier;
+
     // Variable for if player is on ground or not
     public bool isOnGround = true;
+
     // Slide force? Hopefully.
     public float downForce = 10;
 
@@ -26,7 +34,8 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       playerRb = GetComponent<Rigidbody>();
+       // gets the players rigidbody
+       playerRb = GetComponent<Rigidbody>(); 
        Physics.gravity *= gravityModifier; 
     }
 
