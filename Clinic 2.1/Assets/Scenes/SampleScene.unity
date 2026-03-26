@@ -601,6 +601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3032649706482417164, guid: cd7cbbe7c4d72164da714eb31f252fce, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4724939239895296572, guid: cd7cbbe7c4d72164da714eb31f252fce, type: 3}
       propertyPath: field of view
       value: 30
@@ -640,6 +644,10 @@ PrefabInstance:
     - target: {fileID: 7115990262503077444, guid: cd7cbbe7c4d72164da714eb31f252fce, type: 3}
       propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364777172490972300, guid: cd7cbbe7c4d72164da714eb31f252fce, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
