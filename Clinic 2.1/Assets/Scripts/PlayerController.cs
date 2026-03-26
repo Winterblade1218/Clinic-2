@@ -70,11 +70,11 @@ public class PlayerController : MonoBehaviour
         }
 
         //Slide
-        if (Input.GetKeyDown(KeyCode.DownArrow) && isOnGround)
-        {
-            playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
-            isOnGround = false;
-        }
+       // if (Input.GetKeyDown(KeyCode.DownArrow) && isOnGround)
+       // {
+           // playerRb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
+            //isOnGround = false;
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)
