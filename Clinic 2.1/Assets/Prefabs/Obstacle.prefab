@@ -107,12 +107,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1457931, y: 1.0562129, z: 1.2399673}
+  m_Center: {x: 0.00026088953, y: 0.028106451, z: 0.035316467}
 --- !u!54 &-3132947480422499099
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,3 +152,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853f1ebefd4d377479330a845ca03347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KillPlayer
+  playerPrefab: {fileID: 3032649706482417164, guid: cd7cbbe7c4d72164da714eb31f252fce, type: 3}
+  speed: 10

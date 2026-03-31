@@ -221,7 +221,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5866666021909216657, guid: 5c995dfc746d20741b35ffe0ddb93ccf, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 62cae2910503dd14d8c9055ea4ca85df, type: 2}
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 5c995dfc746d20741b35ffe0ddb93ccf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -3735542247951667079, guid: 5c995dfc746d20741b35ffe0ddb93ccf, type: 3}
@@ -237,6 +242,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6500107013325808221, guid: 5c995dfc746d20741b35ffe0ddb93ccf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7115990262503077444}
+    - targetCorrespondingSourceObject: {fileID: -6500107013325808221, guid: 5c995dfc746d20741b35ffe0ddb93ccf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2126228258109678917}
   m_SourcePrefab: {fileID: 100100000, guid: 5c995dfc746d20741b35ffe0ddb93ccf, type: 3}
 --- !u!1 &224529184363257598 stripped
 GameObject:
@@ -281,8 +289,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 20.406322, y: 57.815094, z: 30.663734}
-  m_Center: {x: 0.23955822, y: 22.599478, z: -5.4423}
+  m_Size: {x: 20.406322, y: 58.7539, z: 33.420105}
+  m_Center: {x: 0.23955822, y: 23.068886, z: -4.0641117}
 --- !u!54 &7115990262503077444
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -310,6 +318,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2126228258109678917
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224529184363257598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 5c995dfc746d20741b35ffe0ddb93ccf, type: 3}
+  m_Controller: {fileID: 9100000, guid: 62cae2910503dd14d8c9055ea4ca85df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &7710157170876019492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3735542247951667079, guid: 5c995dfc746d20741b35ffe0ddb93ccf, type: 3}

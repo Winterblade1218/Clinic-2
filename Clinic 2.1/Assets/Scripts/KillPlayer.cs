@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class KillPlayer : MonoBehaviour
 {
+    public GameObject playerPrefab;
+
     //speed of object
     public float speed = 10.0f;
 
@@ -15,17 +17,17 @@ public class KillPlayer : MonoBehaviour
     void Update()
     {
         //moves object forward
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        transform.Translate(Vector3.back * Time.deltaTime * speed);
     }
 
     //detects collision 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
+   // private void OnCollisionEnter(Collision collision)
+    //{
+       // if (collision.gameObject.CompareTag("Player"))
+        //{
             //Destroys the Player
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-        }
-    }
+            //Destroy(gameObject);
+           // Destroy(playerPrefab.gameObject);
+       // }
+    //}
 }

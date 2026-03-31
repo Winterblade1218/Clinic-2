@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour
     // Slide force? Hopefully.
     public float downForce = 10;
 
+    private bool gameOver = false;
+    private Animator playerAnim;
+
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,7 +40,8 @@ public class PlayerController : MonoBehaviour
     {
        // gets the players rigidbody
        playerRb = GetComponent<Rigidbody>(); 
-       Physics.gravity *= gravityModifier; 
+       Physics.gravity *= gravityModifier;
+       playerAnim = GetComponent<Animator>(); 
     }
 
     // Update is called once per frame
@@ -83,6 +88,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+        }
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            gameOver = true;
+            Debug.Log("Game Over");
         }
     }
 }
