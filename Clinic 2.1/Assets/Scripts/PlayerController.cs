@@ -53,11 +53,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) && targetLane > 0)
         {
             targetLane--;
+            playerAnim.SetTrigger("Left");
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow) && targetLane < 2)
         {
             targetLane++;
+            playerAnim.SetTrigger("Right");
         }
 
         //Calculate Position
@@ -65,12 +67,14 @@ public class PlayerController : MonoBehaviour
 
         //Move to Lane
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * moveSpeed);
+        playerAnim.SetBool("Moving", true);
 
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
+            playerAnim.SetTrigger("Jumping");
         }
 
         //Slide
@@ -87,11 +91,13 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+            playerAnim.SetTrigger("Running");
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
             gameOver = true;
             Debug.Log("Game Over");
+            playerAnim.SetTrigger("Death");
         }
     }
 }
